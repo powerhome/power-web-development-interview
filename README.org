@@ -1,0 +1,17 @@
+#+TITLE: Power Web Development Interview
+
+* Requirements
+
+- node (8.7.0)
+- ruby (2.5.1)
+- yarn (1.5.1)
+- mysql (5.7.21)
+
+
+* Getting Started
+
+1. ~git clone git@github.com:powerhome/power-web-development-interview.git~
+2. ~cd power-web-development-interview~
+3. ~bin/setup~
+4. ~bin/rails s~
+5. Verify it is running [[http://localhost:3000][http://localhost:3000]]
