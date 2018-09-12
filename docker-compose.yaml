@@ -1,0 +1,31 @@
+version: '3.4'
+volumes:
+  gems:
+  relational-db-data:
+services:
+  db:
+    image: percona:5.6.37
+    restart: always
+    volumes:
+      - source: relational-db-data
+        target: /var/lib/mysql
+        type: volume
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: power-interview
+  web:
+    tty: true
+    build: .
+    command: ./bin/rails server
+    links:
+      - db
+    ports:
+      - 3000:3000
+    volumes:
+      - source: gems
+        target: /var/bundle
+        type: volume
+      - source: .
+        target: /opt/app
+        type: bind

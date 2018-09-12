@@ -26,7 +26,7 @@ RUN apt-get update -qq \
 
 RUN mkdir /opt/app
 WORKDIR /opt/app
-ENV BUNDLE_PATH /var/gems
+ENV BUNDLE_PATH /var/bundle
 
 COPY ./Gemfile* /opt/app/
 RUN bundle check || bundle install
