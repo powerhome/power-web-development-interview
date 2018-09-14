@@ -11,9 +11,7 @@ end
 
 chdir APP_ROOT do
   puts '== Installing dependencies =='
-  system! 'gem install bundler --conservative'
-  system('bundle check') || system!('bundle install')
-  system('bin/yarn check') || system!('bin/yarn install')
+  system! 'bin/install'
 
   puts "\n== Preparing database =="
   system! 'bin/rails db:setup'

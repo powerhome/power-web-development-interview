@@ -28,6 +28,9 @@ RUN mkdir /opt/app
 WORKDIR /opt/app
 ENV BUNDLE_PATH /var/bundle
 
+COPY ./bin /opt/app/bin/
 COPY ./Gemfile* /opt/app/
-RUN bundle check || bundle install
-ADD . /opt/app/
+COPY ./package.json /opt/app/
+COPY ./yarn.lock /opt/app/
+RUN DISABLE_SPRING=1 ./bin/install
+COPY . /opt/app/
