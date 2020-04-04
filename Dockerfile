@@ -1,36 +1,56 @@
-FROM ruby:2.5.1-stretch
+FROM debian:stretch
 
-ARG DISTRO_NAME=debian
-ARG DISTRO_RELEASE_CODENAME=stretch
-ARG NODE_VERSION=node_8.x
+ARG BUILD_TOOLS="autoconf=2.69-10 \
+  automake=1:1.15-6 \
+  bzip2=1.0.6-8.1 \
+  curl=7.52.1-5+deb9u10 \
+  default-libmysqlclient-dev=1.0.2 \
+  git=1:2.11.0-3+deb9u5 \
+  gnupg=2.1.18-8~deb9u4 \
+  libffi-dev=3.2.1-6 \
+  libreadline-dev=7.0-3 \
+  libssl-dev=1.1.0l-1~deb9u1 \
+  libtool=2.4.6-2 \
+  libxml2-dev=2.9.4+dfsg1-2.2+deb9u2 \
+  libyaml-dev=0.1.7-2 \
+  make=4.1-9.1 \
+  unixodbc-dev=2.3.4-1 \
+  unzip=6.0-21+deb9u2 \
+  zlib1g-dev=1:1.2.8.dfsg-5"
 
-RUN apt-get update -qq \
-  && apt-get install -y \
-    apt-transport-https \
-    build-essential \
-    ca-certificates \
-    curl \
-    git \
-    wget \
-  && wget -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
-  && echo "deb https://deb.nodesource.com/$NODE_VERSION $DISTRO_RELEASE_CODENAME main" >> /etc/apt/sources.list.d/nodesource.list \
-  && echo "deb-src https://deb.nodesource.com/$NODE_VERSION $DISTRO_RELEASE_CODENAME main" >> /etc/apt/sources.list.d/nodesource.list \
-  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-  && echo "deb https://dl.yarnpkg.com/$DISTRO_NAME/ stable main" >> /etc/apt/sources.list.d/yarn.list \
-  && apt-get update -qq \
-  && apt-get install -y \
-     nodejs \
-     yarn \
+RUN apt update \
+  && apt install -y $BUILD_TOOLS \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN mkdir /opt/app
-WORKDIR /opt/app
-ENV BUNDLE_PATH /var/bundle
+RUN useradd -m app
 
-COPY ./bin /opt/app/bin/
-COPY ./Gemfile* /opt/app/
-COPY ./package.json /opt/app/
-COPY ./yarn.lock /opt/app/
-RUN DISABLE_SPRING=1 ./bin/install
-COPY . /opt/app/
+ENV BUNDLE_PATH="/usr/local/bundle"
+RUN mkdir -p $BUNDLE_PATH \
+  && chown -R app:app $BUNDLE_PATH
+
+USER app:app
+WORKDIR /home/app/src
+
+ARG ASDF_VERSION=0.7.8
+RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v$ASDF_VERSION \
+  && echo '. $HOME/.asdf/asdf.sh' >> ~/.bashrc \
+  && echo '. $HOME/.asdf/asdf.sh' >> ~/.profile \
+  && echo '. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
+
+SHELL ["/bin/bash", "-l", "-c"]
+
+RUN asdf plugin add ruby \
+  && asdf plugin add nodejs \
+  && bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring \
+  && asdf plugin add yarn
+
+COPY --chown=app .tool-versions /home/app/
+RUN asdf install
+
+ENV BUNDLER_VERSION=2.1.4
+RUN gem install bundler --version $BUNDLER_VERSION
+RUN bundle config --global path $BUNDLE_PATH
+
+COPY --chown=app . /home/app/src
+RUN bundle install

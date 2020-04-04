@@ -1,6 +1,5 @@
 version: '3.4'
 volumes:
-  gems:
   relational-db-data:
 services:
   db:
@@ -17,15 +16,12 @@ services:
   web:
     tty: true
     build: .
-    command: ./bin/rails server
+    command: bash -lc "bin/rails server"
     links:
       - db
     ports:
       - 3000:3000
     volumes:
-      - source: gems
-        target: /var/bundle
-        type: volume
       - source: .
-        target: /opt/app
+        target: /home/app/src
         type: bind
