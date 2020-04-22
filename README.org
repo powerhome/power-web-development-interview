@@ -19,10 +19,10 @@
 
 * Getting Started
 
-1. ~git clone git@github.com:powerhome/power-web-development-interview.git~
-2. ~cd power-web-development-interview~
-3. ~docker-compose run --rm web bash -lc "bin/setup"~
-4. ~docker-compose up web~
+1. =git clone git@github.com:powerhome/power-web-development-interview.git=
+2. =cd power-web-development-interview=
+3. =bin/bootstrap=
+4. =bin/start=
 5. Verify it is running [[http://localhost:3000][http://localhost:3000]]
 
 * Working with Rails and ~docker-compose~
@@ -36,8 +36,71 @@ commands inside the container use the general form:
 docker-compose run --rm web bash -lc "<rails-command>"
 #+end_src
 
-For example to run a migration, one would invoke ~db:migrate~ like so:
+We've provided binstubs for common tasks as a convenience:
+
+** Bootstrapping the application
+
+Tears down any exiting images, containers, networks, etc. and sets
+everything up from scratch.
 
 #+begin_src sh
-docker-compose run --rm web bash -lc "bin/rails db:migrate"
+  bin/bootstrap
 #+end_src
+
+** Installing application dependencies
+
+#+begin_src sh
+  bin/deps
+#+end_src
+
+Installs the application's Ruby and JavaScript dependencies.
+
+Analogous to: =bin/bundle && bin/yarn=
+
+** Obtaining a shell
+
+#+begin_src sh
+bin/shell
+#+end_src
+
+Starts a Bash shell inside the application container and establishes a
+TTY connection to it from the user's terminal.
+
+Useful for things like generating migrations, etc.
+
+** Obtaining a Rails console
+
+#+begin_src sh
+bin/console
+#+end_src
+
+Starts a Rails console container and establishes a TTY connection to
+it from the user's terminal.
+
+Analogous to: =bin/rails console=
+
+** Starting the application and its services
+
+#+begin_src sh
+bin/start
+#+end_src
+
+Starts the web application container and its supporting services - RDBMS, etc.
+
+Analogous to: =bin/rails server=
+
+** Stopping the application and its services
+
+#+begin_src sh
+bin/stop
+#+end_src
+
+Stop the web application container and its supporting services - RDBMS, etc.
+
+** Deleting all application resources
+
+#+begin_src sh
+bin/cleanup
+#+end_src
+
+Destroys all docker resources for the application and services.
