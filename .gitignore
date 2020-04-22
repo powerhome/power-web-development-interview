@@ -33,3 +33,4 @@ yarn-debug.log*
 
 coverage
 spec/examples.txt
+/.bash_history

@@ -2,16 +2,42 @@
 
 * Requirements
 
-- node (8.7.0)
-- ruby (2.5.1)
-- yarn (1.5.1)
-- mysql (5.7.21)
+** Docker
 
+*** OSX
+
+    Via [[https://brew.sh/][homebrew]]
+
+    #+BEGIN_SRC
+    brew cask install docker
+    #+END_SRC
+
+
+*** Debian/Ubuntu Linux
+
+    https://docs.docker.com/install/linux/docker-ce/debian/#uninstall-old-versions
 
 * Getting Started
 
 1. ~git clone git@github.com:powerhome/power-web-development-interview.git~
 2. ~cd power-web-development-interview~
-3. ~bin/setup~
-4. ~bin/rails s~
+3. ~docker-compose run --rm web bash -lc "bin/setup"~
+4. ~docker-compose up web~
 5. Verify it is running [[http://localhost:3000][http://localhost:3000]]
+
+* Working with Rails and ~docker-compose~
+
+All of the dependencies to build and run the rails application are
+included in the ~web~ service's image - named
+~power-web-development-interview_web~. To run typical ~bin/rails~
+commands inside the container use the general form:
+
+#+begin_src sh
+docker-compose run --rm web bash -lc "<rails-command>"
+#+end_src
+
+For example to run a migration, one would invoke ~db:migrate~ like so:
+
+#+begin_src sh
+docker-compose run --rm web bash -lc "bin/rails db:migrate"
+#+end_src
