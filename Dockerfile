@@ -5,7 +5,7 @@ ARG BUILD_TOOLS="autoconf=2.69-10 \
   bzip2=1.0.6-8.1 \
   curl=7.52.1-5+deb9u10 \
   default-libmysqlclient-dev=1.0.2 \
-  git=1:2.11.0-3+deb9u5 \
+  git=1:2.11.0-3+deb9u7 \
   gnupg=2.1.18-8~deb9u4 \
   libffi-dev=3.2.1-6 \
   libreadline-dev=7.0-3 \
