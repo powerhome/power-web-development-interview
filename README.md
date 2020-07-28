@@ -39,7 +39,7 @@ Via [homebrew](https://brew.sh/)
 
 ### Debian/Ubuntu Linux
 
-<https://docs.docker.com/install/linux/docker-ce/debian/#uninstall-old-versions>
+<https://docs.docker.com/engine/install/debian/>
 
 
 <a id="org76343d4"></a>
