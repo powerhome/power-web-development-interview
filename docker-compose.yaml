@@ -3,7 +3,7 @@ volumes:
   relational-db-data:
 services:
   db:
-    image: percona:5.7.30
+    image: percona:5.7.31
     restart: always
     volumes:
       - source: relational-db-data
