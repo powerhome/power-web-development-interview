@@ -25,3 +25,5 @@ services:
       - source: .
         target: /home/app/src
         type: bind
+    environment:
+      - BUNDLER_VERSION=1.16.4 # Set bundler version for restarts
