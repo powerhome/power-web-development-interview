@@ -16,7 +16,7 @@ services:
   web:
     tty: true
     build: .
-    command: bash -lc "bin/rails server"
+    command: bash -lc "(bundle check || bundle install) && bin/rails server"
     links:
       - db
     ports:
