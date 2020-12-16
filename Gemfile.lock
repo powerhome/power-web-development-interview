@@ -52,9 +52,6 @@ GEM
     bootsnap (1.3.2)
       msgpack (~> 1.0)
     builder (3.2.3)
-    bundler-audit (0.6.0)
-      bundler (~> 1.2)
-      thor (~> 0.18)
     byebug (10.0.2)
     capybara (3.7.1)
       addressable
@@ -254,7 +251,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bootsnap (>= 1.1.0)
-  bundler-audit
   capybara-selenium
   chromedriver-helper
   coffee-rails (~> 4.2)
