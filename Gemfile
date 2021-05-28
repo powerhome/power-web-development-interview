@@ -7,7 +7,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 5.0'
 gem 'rails', '~> 5.2.1'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
