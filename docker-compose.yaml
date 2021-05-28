@@ -16,7 +16,7 @@ services:
   web:
     tty: true
     build: .
-    command: bash -lc "bin/rails server"
+    command: bash -lc "(bundle check || bundle install) && bin/rails server"
     links:
       - db
     ports:
@@ -25,3 +25,5 @@ services:
       - source: .
         target: /home/app/src
         type: bind
+    environment:
+      - BUNDLER_VERSION=1.16.4 # Set bundler version for restarts
