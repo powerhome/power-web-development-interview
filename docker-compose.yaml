@@ -16,7 +16,7 @@ services:
   web:
     tty: true
     build: .
-    command: bash -lc "bin/rails server"
+    command: bash -lc "bin/rails server -b 0.0.0.0"
     links:
       - db
     ports:
