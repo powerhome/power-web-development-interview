@@ -44,7 +44,6 @@ SHELL ["/bin/bash", "-l", "-c"]
 
 RUN asdf plugin add ruby \
   && asdf plugin add nodejs \
-  && bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring \
   && asdf plugin add yarn
 
 COPY --chown=app .tool-versions /home/app/
