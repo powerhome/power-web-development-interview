@@ -10,14 +10,14 @@ ARG BUILD_TOOLS="\
   gnupg=2.2.12-1+deb10u1 \
   libffi-dev=3.2.1-9 \
   libreadline-dev=7.0-5 \
-  libssl-dev=1.1.1d-0+deb10u7 \
+  libssl-dev=1.1.1n-0+deb10u2 \
   libtool=2.4.6-9 \
-  libxml2-dev=2.9.4+dfsg1-7+deb10u2 \
+  libxml2-dev=2.9.4+dfsg1-7+deb10u4 \
   libyaml-dev=0.2.1-1 \
   make=4.2.1-1.2 \
   unixodbc-dev=2.3.6-0.1 \
   unzip=6.0-23+deb10u2 \
-  zlib1g-dev=1:1.2.11.dfsg-1 \
+  zlib1g-dev=1:1.2.11.dfsg-1+deb10u1 \
   "
 
 RUN apt-get update \
