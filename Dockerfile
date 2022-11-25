@@ -3,7 +3,7 @@ FROM debian:buster
 ARG BUILD_TOOLS="\
   autoconf=2.69-11 \
   automake=1:1.16.1-4 \
-  bzip2=1.0.6-9.2~deb10u1 \
+  bzip2=1.0.6-9.2~deb10u2 \
   curl=7.64.0-4+deb10u3 \
   default-libmysqlclient-dev=1.0.5 \
   git=1:2.20.1-2+deb10u3 \
@@ -12,12 +12,12 @@ ARG BUILD_TOOLS="\
   libreadline-dev=7.0-5 \
   libssl-dev=1.1.1n-0+deb10u3 \
   libtool=2.4.6-9 \
-  libxml2-dev=2.9.4+dfsg1-7+deb10u4 \
+  libxml2-dev=2.9.4+dfsg1-7+deb10u5 \
   libyaml-dev=0.2.1-1 \
   make=4.2.1-1.2 \
   unixodbc-dev=2.3.6-0.1 \
   unzip=6.0-23+deb10u2 \
-  zlib1g-dev=1:1.2.11.dfsg-1+deb10u1 \
+  zlib1g-dev=1:1.2.11.dfsg-1+deb10u2 \
   "
 
 RUN apt-get update \
