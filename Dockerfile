@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 
 ARG BUILD_TOOLS="\
   autoconf=2.69-11 \
