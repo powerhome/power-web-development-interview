@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-docker-compose run --rm web bash -lc "(bundle check || bundle install) && (bin/yarn check || bin/yarn install)"
+docker-compose run --rm web bash -lc "(bin/bundle check || bin/bundle install) && (bin/yarn check || bin/yarn install)"
