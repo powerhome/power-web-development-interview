@@ -51,7 +51,7 @@ RUN asdf plugin add ruby \
 COPY --chown=app .tool-versions /home/app/
 RUN asdf install
 
-ENV BUNDLER_VERSION=2.4.0
+ENV BUNDLER_VERSION=2.4.10
 RUN gem install bundler --version $BUNDLER_VERSION
 RUN bundle config --global path $BUNDLE_PATH
 
