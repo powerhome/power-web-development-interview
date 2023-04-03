@@ -76,7 +76,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     diff-lcs (1.5.0)
     docile (1.4.0)
@@ -94,10 +94,11 @@ GEM
     ffi (1.15.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.8.10)
+    i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
-    jbuilder (2.11.2)
+    jbuilder (2.11.5)
+      actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -226,7 +227,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.9)
+    tzinfo (1.2.11)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
@@ -277,7 +278,7 @@ DEPENDENCIES
   webpacker
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.7.6p219
 
 BUNDLED WITH
    2.1.4
