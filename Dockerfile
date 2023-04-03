@@ -1,23 +1,25 @@
-FROM debian:buster
+FROM debian:bullseye
 
 ARG BUILD_TOOLS="\
-  autoconf=2.69-11 \
-  automake=1:1.16.1-4 \
-  bzip2=1.0.6-9.2~deb10u2 \
-  curl=7.64.0-4+deb10u5 \
-  default-libmysqlclient-dev=1.0.5 \
-  git=1:2.20.1-2+deb10u3 \
-  gnupg=2.2.12-1+deb10u2 \
-  libffi-dev=3.2.1-9 \
-  libreadline-dev=7.0-5 \
-  libssl-dev=1.1.1n-0+deb10u4 \
-  libtool=2.4.6-9 \
-  libxml2-dev=2.9.4+dfsg1-7+deb10u5 \
-  libyaml-dev=0.2.1-1 \
-  make=4.2.1-1.2 \
-  unixodbc-dev=2.3.6-0.1 \
-  unzip=6.0-23+deb10u2 \
-  zlib1g-dev=1:1.2.11.dfsg-1+deb10u2 \
+  autoconf \
+  automake \
+  bzip2 \
+  build-essential \
+  curl \
+  default-libmysqlclient-dev \
+  g++ \
+  git \
+  gnupg \
+  libffi-dev \
+  libreadline-dev \
+  libssl-dev \
+  libtool \
+  libxml2-dev \
+  libyaml-dev \
+  make \
+  unixodbc-dev \
+  unzip \
+  zlib1g-dev \
   "
 
 RUN apt-get update \
@@ -49,7 +51,7 @@ RUN asdf plugin add ruby \
 COPY --chown=app .tool-versions /home/app/
 RUN asdf install
 
-ENV BUNDLER_VERSION=2.1.4
+ENV BUNDLER_VERSION=2.4.0
 RUN gem install bundler --version $BUNDLER_VERSION
 RUN bundle config --global path $BUNDLE_PATH
 
