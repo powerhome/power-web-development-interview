@@ -2,7 +2,7 @@
   "name": "power-web-development-interview",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "5.4.3"
+    "@rails/webpacker": "5.4.4"
   },
   "devDependencies": {
     "webpack-dev-server": "4.13.2"
