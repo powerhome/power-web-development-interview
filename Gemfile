@@ -1,25 +1,25 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.2'
+ruby "3.2.2"
 
-gem 'bootsnap', '>= 1.1.0', require: false
-gem 'coffee-rails', '~> 5.0'
-gem 'jbuilder', '~> 2.5'
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-gem 'puma', '~> 6.0'
-gem 'rails', '~> 6.1.7.3'
-gem 'sass-rails', '~> 6.0'
-gem 'turbolinks', '~> 5'
-gem 'uglifier', '>= 1.3.0'
-gem 'webpacker'
+gem "bootsnap", ">= 1.1.0", require: false
+gem "coffee-rails", "~> 5.0"
+gem "jbuilder", "~> 2.5"
+gem "mysql2", ">= 0.4.4", "< 0.6.0"
+gem "puma", "~> 6.0"
+gem "rails", "~> 6.1.7.3"
+gem "sass-rails", "~> 6.0"
+gem "turbolinks", "~> 5"
+gem "uglifier", ">= 1.3.0"
+gem "webpacker"
 
 group :development do
   gem "listen"
   gem "spring"
   gem "spring-commands-rspec"
-  gem "spring-watcher-listen", "~> 2.0.0"
-  gem "web-console", ">= 3.3.0"
+  gem "spring-watcher-listen"
+  gem "web-console"
 end
 
 group :development, :test do
@@ -28,7 +28,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "pry-byebug"
   gem "pry-rails"
-  gem "rspec-rails", "~> 6.0"
+  gem "rspec-rails"
 end
 
 group :test do
