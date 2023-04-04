@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 group :development do
-  gem "listen", ">= 3.0.5", "< 3.8.1"
+  gem "listen"
   gem "spring"
   gem "spring-commands-rspec"
   gem "spring-watcher-listen", "~> 2.0.0"

@@ -290,7 +290,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   jbuilder (~> 2.5)
-  listen (>= 3.0.5, < 3.8.1)
+  listen
   mysql2 (>= 0.4.4, < 0.6.0)
   pry-byebug
   pry-rails
