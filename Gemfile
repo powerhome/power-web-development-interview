@@ -18,7 +18,7 @@ group :development do
   gem "listen"
   gem "spring"
   gem "spring-commands-rspec"
-  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "spring-watcher-listen", "~> 2.1.0"
   gem "web-console", ">= 3.3.0"
 end
 
