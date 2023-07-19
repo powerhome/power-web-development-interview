@@ -4,7 +4,7 @@ volumes:
 services:
   db:
     platform: linux/x86_64
-    image: percona:5.7.35
+    image: percona:5.7.39
     restart: always
     volumes:
       - source: relational-db-data
