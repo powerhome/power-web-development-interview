@@ -3,8 +3,7 @@ volumes:
   relational-db-data:
 services:
   db:
-    platform: linux/x86_64
-    image: percona:5.7.39
+    image: docker.io/mysql/mysql-server:8.0.32
     restart: always
     volumes:
       - source: relational-db-data
@@ -13,6 +12,7 @@ services:
     ports:
       - 3306:3306
     environment:
+      MYSQL_ROOT_HOST: "%"
       MYSQL_ROOT_PASSWORD: power-interview
   web:
     tty: true
