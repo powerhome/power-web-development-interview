@@ -48,13 +48,13 @@ RUN asdf plugin add ruby \
   && asdf plugin add nodejs \
   && asdf plugin add yarn
 
-# REMOVE ME: Workaround for https://bugs.ruby-lang.org/issues/20085.
-# This should be removed either when ruby is upgraded to a version
-# >3.3.0 or a newer version of ruby-build is available to asdf-ruby
-# which includes the backported patch to ruby 3.3.0.
-ENV CONFIGURE_OPTS="ASFLAGS=-mbranch-protection=pac-ret"
 COPY --chown=app .tool-versions /home/app/
-RUN asdf install
+# REMOVE ME: Workaround for https://bugs.ruby-lang.org/issues/20085.
+# The RUBY_APPLY_PATCHES var should be removed either when ruby is
+# upgraded to a version >3.3.0 or a newer version of ruby-build is
+# available to asdf-ruby which includes the backported patch to ruby
+# 3.3.0.
+RUN RUBY_APPLY_PATCHES="https://patch-diff.githubusercontent.com/raw/ruby/ruby/pull/9371.diff" asdf install
 
 ENV BUNDLER_VERSION=2.4.10
 RUN gem install bundler --version $BUNDLER_VERSION
