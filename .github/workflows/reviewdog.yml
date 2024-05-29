@@ -1,0 +1,16 @@
+name: Automated Code Reviews
+on: [pull_request]
+
+jobs:
+  brakeman:
+    name: Security Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+      - name: Brakeman
+        uses: reviewdog/action-brakeman@v2
+        with:
+          brakeman_version: gemfile
