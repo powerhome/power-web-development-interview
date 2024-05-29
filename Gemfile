@@ -20,6 +20,7 @@ group :development do
   gem "spring-commands-rspec"
   gem "spring-watcher-listen", "~> 2.1.0"
   gem "web-console", ">= 3.3.0"
+  gem "brakeman"
 end
 
 group :development, :test do
