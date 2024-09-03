@@ -64,7 +64,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     awesome_print (1.9.2)
     bindex (0.8.1)
-    bootsnap (1.18.3)
+    bootsnap (1.18.4)
       msgpack (~> 1.2)
     brakeman (6.1.2)
       racc
