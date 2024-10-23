@@ -29,7 +29,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "pry-byebug"
   gem "pry-rails"
-  gem "rspec-rails", "~> 6.0"
+  gem "rspec-rails", "~> 7.0"
 end
 
 group :test do
