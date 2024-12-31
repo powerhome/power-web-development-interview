@@ -5,7 +5,7 @@
         1.  [OSX](#org5118f49)
         2.  [Debian/Ubuntu Linux](#org7168fc9)
 2.  [Getting Started](#org76343d4)
-3.  [Working with Rails and `docker-compose`](#org23b1de9)
+3.  [Working with Rails and `docker compose`](#org23b1de9)
     1.  [Bootstrapping the application](#org52fd95d)
     2.  [Installing application dependencies](#orge7ed08d)
     3.  [Obtaining a shell](#org422384f)
@@ -55,14 +55,14 @@ Via [homebrew](https://brew.sh/)
 
 <a id="org23b1de9"></a>
 
-# Working with Rails and `docker-compose`
+# Working with Rails and `docker compose`
 
 All of the dependencies to build and run the rails application are
 included in the `web` service's image - named
 `power-web-development-interview_web`. To run typical `bin/rails`
 commands inside the container use the general form:
 
-    docker-compose run --rm web bash -lc "<rails-command>"
+    docker compose run --rm web bash -lc "<rails-command>"
 
 We've provided binstubs for common tasks as a convenience:
 

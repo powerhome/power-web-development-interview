@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
 bin/cleanup
-docker-compose run --rm web bash -lc "bin/setup"
+docker compose run --rm web bash -lc "bin/setup"
