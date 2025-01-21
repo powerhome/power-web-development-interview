@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base"
-  ],
-  "labels": ["dependencies"]
+    "config:base",
+    "github>powerhome/renovate-config"
+  ]
 }
