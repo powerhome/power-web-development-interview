@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.0'
+ruby '3.4.4'
 
 gem 'bootsnap', '1.18.6', require: false
 gem 'coffee-rails', '5.0.0'
