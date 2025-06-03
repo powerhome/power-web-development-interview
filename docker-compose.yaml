@@ -3,7 +3,7 @@ volumes:
   relational-db-data:
 services:
   db:
-    image: docker.io/mysql/mysql-server:8.0.32
+    image: docker.io/mysql/mysql-server:8.0.32@sha256:d6c8301b7834c5b9c2b733b10b7e630f441af7bc917c74dba379f24eeeb6a313
     restart: always
     volumes:
       - source: relational-db-data
