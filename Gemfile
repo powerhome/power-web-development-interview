@@ -3,23 +3,23 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.3.0'
 
-gem 'bootsnap', '>= 1.1.0', require: false
-gem 'coffee-rails', '~> 5.0'
-gem 'jbuilder', '~> 2.5'
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-gem 'puma', '~> 6.0'
+gem 'bootsnap', '1.18.6', require: false
+gem 'coffee-rails', '5.0.0'
+gem 'jbuilder', '2.13.0'
+gem 'mysql2', '0.5.6'
+gem 'puma', '6.6.0'
 gem 'rails', '~> 8.0.1'
-gem 'sass-rails', '~> 6.0'
-gem 'turbolinks', '~> 5'
-gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails', '6.0.0'
+gem 'turbolinks', '5.2.1'
+gem 'uglifier', '4.2.1'
 gem 'webpacker'
 
 group :development do
   gem "listen"
   gem "spring"
   gem "spring-commands-rspec"
-  gem "spring-watcher-listen", "~> 2.1.0"
-  gem "web-console", ">= 3.3.0"
+  gem "spring-watcher-listen", "2.1.0"
+  gem "web-console", "4.2.1"
   gem "brakeman"
 end
 
@@ -29,7 +29,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "pry-byebug"
   gem "pry-rails"
-  gem "rspec-rails", "~> 7.0"
+  gem "rspec-rails", "7.1.1"
 end
 
 group :test do
