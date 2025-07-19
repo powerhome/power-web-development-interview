@@ -347,7 +347,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (= 6.6.0)
-  rails (~> 8.0.1)
+  rails (= 8.0.2)
   rspec-rails (= 8.0.0)
   sass-rails (= 6.0.0)
   shoulda-matchers
