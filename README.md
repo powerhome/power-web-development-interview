@@ -32,7 +32,7 @@
 
 Via [homebrew](https://brew.sh/)
 
-    brew cask install docker
+    brew install --cask docker
 
 
 <a id="org7168fc9"></a>
