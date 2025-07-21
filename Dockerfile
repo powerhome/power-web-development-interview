@@ -49,12 +49,8 @@ RUN asdf plugin add ruby \
   && asdf plugin add yarn
 
 COPY --chown=app .tool-versions /home/app/
-# REMOVE ME: Workaround for https://bugs.ruby-lang.org/issues/20085.
-# The RUBY_APPLY_PATCHES var should be removed either when ruby is
-# upgraded to a version >3.3.0 or a newer version of ruby-build is
-# available to asdf-ruby which includes the backported patch to ruby
-# 3.3.0.
-RUN RUBY_APPLY_PATCHES="https://patch-diff.githubusercontent.com/raw/ruby/ruby/pull/9371.diff" asdf install
+
+RUN asdf install
 
 ENV BUNDLER_VERSION=2.4.10
 RUN gem install bundler --version $BUNDLER_VERSION
