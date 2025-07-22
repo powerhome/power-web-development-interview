@@ -1,4 +1,4 @@
-FROM debian:bookworm@sha256:bd73076dc2cd9c88f48b5b358328f24f2a4289811bd73787c031e20db9f97123
+FROM debian:bookworm@sha256:b6507e340c43553136f5078284c8c68d86ec8262b1724dde73c325e8d3dcdeba
 
 ARG BUILD_TOOLS="\
   autoconf \
