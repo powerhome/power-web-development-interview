@@ -1,4 +1,4 @@
-FROM debian:trixie@sha256:833c135acfe9521d7a0035a296076f98c182c542a2b6b5a0fd7063d355d696be
+FROM debian:trixie@sha256:c71b05eac0b20adb4cdcc9f7b052227efd7da381ad10bb92f972e8eae7c6cdc9
 
 ARG BUILD_TOOLS="\
   autoconf \
