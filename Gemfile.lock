@@ -79,7 +79,7 @@ GEM
     benchmark (0.4.1)
     bigdecimal (3.2.3)
     bindex (0.8.1)
-    bootsnap (1.18.6)
+    bootsnap (1.23.0)
       msgpack (~> 1.2)
     brakeman (7.1.0)
       racc
@@ -338,7 +338,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  bootsnap (= 1.18.6)
+  bootsnap (= 1.23.0)
   brakeman
   capybara-selenium
   coffee-rails (= 5.0.0)
