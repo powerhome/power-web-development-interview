@@ -79,8 +79,8 @@ GEM
     benchmark (0.4.1)
     bigdecimal (3.2.3)
     bindex (0.8.1)
-    bootsnap (1.18.6)
-      msgpack (~> 1.2)
+    bootsnap (1.26.0)
+      msgpack (~> 1.5)
     brakeman (7.1.0)
       racc
     builder (3.3.0)
@@ -155,7 +155,7 @@ GEM
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.25.5)
-    msgpack (1.8.0)
+    msgpack (1.8.4)
     mysql2 (0.5.7)
       bigdecimal
     net-imap (0.5.10)
@@ -338,7 +338,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  bootsnap (= 1.18.6)
+  bootsnap (= 1.26.0)
   brakeman
   capybara-selenium
   coffee-rails (= 5.0.0)
