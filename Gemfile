@@ -5,7 +5,7 @@ ruby '3.4.6'
 
 gem 'bootsnap', '1.18.6', require: false
 gem 'coffee-rails', '5.0.0'
-gem 'jbuilder', '2.14.1'
+gem 'jbuilder', '2.15.1'
 gem 'mysql2', '0.5.7'
 gem 'puma', '7.0.4'
 gem 'rails', '8.0.3'
